@@ -12,7 +12,7 @@ print(df)
 
 f = pd.concat([gu,cho,pa], axis=1)
 
-boxplot = f.boxplot(column=['gu-', 'choki', 'pa-'])
+boxplot = f.boxplot(column=['gu-', 'choki', 'pa-'],showmeans=True)
 boxplot.plot()
-plt.ylim([-50,50])
+plt.ylim([-700,700])
 plt.show()
