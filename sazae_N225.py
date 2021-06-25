@@ -1,3 +1,4 @@
+from numpy.core.fromnumeric import ptp
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -8,14 +9,10 @@ gu = dfG['gu-']
 cho = dfC['choki']
 pa = dfP['pa-']
 df = pa.mean()
-print(df)
 
 f = pd.concat([gu,cho,pa], axis=1)
 
-print(f)
-
 size = f.abs().max().max()*1.1
-
 boxplot = f.boxplot(column=['gu-', 'choki', 'pa-'],showmeans=True)
 boxplot.plot()
 plt.ylim([-size,size])
